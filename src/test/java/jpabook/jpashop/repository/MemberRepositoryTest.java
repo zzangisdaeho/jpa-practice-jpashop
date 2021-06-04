@@ -22,20 +22,20 @@ class MemberRepositoryTest {
     public void testMember() throws Exception{
         //given
         Member member = new Member();
-        member.setUsername("memberA");
+        member.setName("memberA");
         //when
         Long savedId = memberRepository.save(member);
         Member findMember = memberRepository.find(savedId);
 
         //then
         Assertions.assertThat(findMember.getId()).isEqualTo(member.getId());
-        Assertions.assertThat(findMember.getUsername()).isEqualTo(member.getUsername());
+        Assertions.assertThat(findMember.getName()).isEqualTo(member.getName());
         // 같은 transaction = 같은 영속성 context = 같은 entity
         Assertions.assertThat(findMember).isEqualTo(member);
 
 
         org.junit.jupiter.api.Assertions.assertEquals(findMember.getId(), member.getId());
-        org.junit.jupiter.api.Assertions.assertEquals(findMember.getUsername(), member.getUsername());
+        org.junit.jupiter.api.Assertions.assertEquals(findMember.getName(), member.getName());
         org.junit.jupiter.api.Assertions.assertEquals(findMember, member);
 
     }

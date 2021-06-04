@@ -8,8 +8,8 @@ spring:
   jpa:
     hibernate:
       ddl-auto: create
-    properties:
-      hibernate:
+#    properties:
+#      hibernate:
 #        show_sql: true #SQL문을 print로 출력
 #        format_sql: true #SQL 문을 보기좋게 출력
 
@@ -18,8 +18,3 @@ spring:
 #  level:
 #    org.hibernate.SQL: debug #SQL문을 logger로 출력
 #    org.hibernate.type: trace #SQL parameter를 출력
-
-decorator:
-  datasource:
-    p6spy:
-      multiline: false
