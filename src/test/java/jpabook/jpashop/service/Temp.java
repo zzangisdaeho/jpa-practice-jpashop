@@ -1,22 +1,22 @@
-//package jpabook.jpashop.service;
-//
-//import jpabook.jpashop.entity.Member;
-//import jpabook.jpashop.entity.Order;
-//import org.junit.jupiter.api.Test;
-//import org.springframework.beans.factory.annotation.Autowired;
-//import org.springframework.boot.test.context.SpringBootTest;
-//import org.springframework.transaction.annotation.Transactional;
-//
-//import javax.persistence.EntityManager;
-//import java.time.LocalDateTime;
-//
-//@SpringBootTest
-//@Transactional
-//public class Temp {
-//
-//    @Autowired
-//    EntityManager em;
-//
+package jpabook.jpashop.service;
+
+import jpabook.jpashop.entity.Member;
+import jpabook.jpashop.entity.Order;
+import org.junit.jupiter.api.Test;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.transaction.annotation.Transactional;
+
+import javax.persistence.EntityManager;
+import java.time.LocalDateTime;
+
+@SpringBootTest
+@Transactional
+public class Temp {
+
+    @Autowired
+    EntityManager em;
+
 //    @Test
 //    public void cascadeTest() throws Exception{
 //        //given
@@ -50,4 +50,4 @@
 //
 //        //then
 //    }
-//}
+}
