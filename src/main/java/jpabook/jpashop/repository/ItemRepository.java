@@ -18,6 +18,10 @@ public class ItemRepository {
             em.persist(item);
         } else {
             //merge : update와 비슷한거
+            //merge는 쉽게말해 parameter에서 id를 통해 db에서 entity를 가져온 후 식별자를 제외한 모든 col을 paramter로 바꿔치기하여 업데이트하는것
+            //merge로 return되는 객체는 영속성 컨텍스트 안에 있다.(컨텍스트에 들어가서 업데이트되고 나온거니까)
+            //merge는 모든 필드를 바꿔치기 하기 때문에 paramter에 값을 주지 않으면(null) 해당 필드는 다 null로 업데이트된다. 고로 일부분만 바꾸고 싶으면 로딩해와서 해당부분만 바꿔줘야할것
+            //결론 : 나중에 데이터 null로 날아가는 대형사고 터지기 싫으면 왠만하면 merge는 지양해라
             em.merge(item);
         }
     }

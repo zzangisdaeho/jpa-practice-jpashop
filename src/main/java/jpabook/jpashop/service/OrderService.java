@@ -39,9 +39,11 @@ public class OrderService {
         delivery.setAddress(member.getAddress());
 
         //주문상품 생성
+        //OrderItem을 생성할때 item의 count를 감소하는 로직은 OrdetItem이 저장되지 않아도, 이미 영속성에 올라간 Item의 내부 값(count)이 바뀌면서 dirtychecking에 의해 업데이트된다.
         OrderItem orderItem = OrderItem.createOrderItem(item, item.getPrice(), count);
 
         //주문 생성
+        //Order에 cascade ALL에 의해 persist는 Order이지만, 자식인 OrderItem도 저장이 된다.
         Order order = Order.createOrder(member, delivery, orderItem);
 
         //주문 저장

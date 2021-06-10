@@ -1,9 +1,6 @@
 package jpabook.jpashop.entity;
 
-import lombok.AllArgsConstructor;
-import lombok.Getter;
-import lombok.NoArgsConstructor;
-import lombok.Setter;
+import lombok.*;
 
 import javax.persistence.Embeddable;
 
@@ -11,9 +8,10 @@ import javax.persistence.Embeddable;
 @Getter
 @NoArgsConstructor
 @AllArgsConstructor
+@ToString
 public class Address {
 
     private String city;
-    private String steet;
+    private String street;
     private String zipcode;
 }
