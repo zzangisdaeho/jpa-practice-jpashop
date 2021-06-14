@@ -8,6 +8,10 @@ spring:
   jpa:
     hibernate:
       ddl-auto: create
+
+  jackson:
+    serialization:
+      fail-on-empty-beans: false
 #    properties:
 #      hibernate:
 #        show_sql: true #SQL문을 print로 출력

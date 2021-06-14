@@ -30,6 +30,10 @@ dependencies {
     runtimeOnly 'com.h2database:h2'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
+    // https://mvnrepository.com/artifact/com.fasterxml.jackson.datatype/jackson-datatype-hibernate5
+    implementation 'com.fasterxml.jackson.datatype:jackson-datatype-hibernate5'
+
+
 }
 
 test {
