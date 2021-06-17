@@ -8,14 +8,17 @@ spring:
   jpa:
     hibernate:
       ddl-auto: create
+    properties:
+      hibernate:
+        default_batch_fetch_size: 100
+#    open-in-view: false
+
+  #        show_sql: true #SQL문을 print로 출력
+#        format_sql: true #SQL 문을 보기좋게 출력
 
   jackson:
     serialization:
       fail-on-empty-beans: false
-#    properties:
-#      hibernate:
-#        show_sql: true #SQL문을 print로 출력
-#        format_sql: true #SQL 문을 보기좋게 출력
 
 
 #logging:
