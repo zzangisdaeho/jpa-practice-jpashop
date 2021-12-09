@@ -19,6 +19,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDateTime;
 import java.util.List;
+import java.util.function.Function;
 import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.*;
@@ -87,7 +88,9 @@ public class OrderApiController {
 
         return flats.stream()
                 .collect(groupingBy(
+                        // OrderQueryDto 를 기준으로 그룹핑
                         o -> new OrderQueryDto(o.getOrderId(), o.getName(), o.getOrderDate(), o.getOrderStatus(), o.getAddress())
+                        // 그룹핑의 value는 OrderItemQueryDto object의 List 자료구조로 반환
                         , mapping(o -> new OrderItemQueryDto(o.getOrderId(), o.getItemName(), o.getOrderPrice(), o.getCount()), toList())
                 ))
                 .entrySet().stream()
